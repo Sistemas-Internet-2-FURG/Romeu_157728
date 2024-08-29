@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Usuários</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <h1>Listar Usuários</h1>
+
+    <ul>
+        {% for usuario in usuarios %}
+            <li>{{ usuario[1] }} ({{ usuario[2] }}) - {{ usuario[3] }} 
+                <a href="{{ url_for('atualizar_usuario', usuario_id=usuario[0]) }}">
+                  Atualizar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <div class="link-container">
+	    <a href="{{ url_for('inside_home') }}">Voltar ao menu</a>
+    </div>
+</body>
+</html>

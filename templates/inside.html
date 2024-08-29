@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menus</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<h2 style="text-align:center">Menus</h2>
+<hr>
+
+{{ menu }}
+<br>
+
+<!-- Contêiner para os links -->
+<div class="link-container">
+    <a href="{{ url_for('logout') }}">Logout</a>
+    <a href="{{ url_for('usando_variaveis') }}">Gerenciar_Dados</a>
+    <a href="{{ url_for('remove_aluno') }}">Remover_Usuário</a>
+    <a href="{{ url_for('cadastrar_disciplina') }}">Cadastrar_Disciplina</a>
+    <a href="{{ url_for('matricular_disciplina') }}">Matricular</a>
+    <a href="{{ url_for('listar_usuarios') }}">Listar_Atualizar_Usuario</a>
+    <a href="{{ url_for('cadastrar_curso') }}">Cadastrar_Curso</a>
+</div>
+
+</body>
+</html>

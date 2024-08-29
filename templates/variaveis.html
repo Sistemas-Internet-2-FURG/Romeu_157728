@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gerenciar Usuários</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+<h2 style="text-align:center">Gerenciar Usuários</h2>
+<hr>
+<table border='true'>
+	<tr>
+		<td>Nome:</td>
+		<td>Matrícula:</td>
+		<td>Tipo:</td>
+		<td>Curso:</td> 
+	</tr>
+	{% for usuario in chamada %}
+	<tr>
+		<td>{{ usuario[1] }}</td>
+		<td>{{ usuario[2] }}</td>
+		<td>{{ usuario[3] }}</td>
+		<td>{{ usuario[4] }}</td> <!-- Exibe o curso do usuário -->
+	</tr>
+	{% endfor %}
+</table>
+<br>
+<form action="{{ url_for('usando_variaveis') }}" method="POST">
+	<input type="text" id="nome" name="nome" placeholder="Nome" required/>
+	<input type="number" id="matricula" name="matricula" placeholder="Matrícula" required/>
+	<select name="tipo" id="tipo">
+        <option value="aluno">Aluno</option>
+        <option value="professor">Professor</option>
+    </select>
+
+	<!-- Adiciona o campo para selecionar o curso -->
+	<select name="curso_id" id="curso_id" required>
+		<option value="" disabled selected>Selecione um Curso</option>
+		{% for curso in cursos %}
+			<option value="{{ curso[0] }}">{{ curso[1] }}</option>
+		{% endfor %}
+	</select>
+	
+	<button type="submit">Adicionar</button>
+</form>
+
+<div class="link-container">
+	<a href="{{ url_for('inside_home') }}">Voltar ao menu</a>
+</div>
+
+</body>
+</html>

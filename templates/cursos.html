@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <form method="POST">
+    <label for="nome">Nome do Curso:</label>
+    <input type="text" id="nome" name="nome" required>
+    <input type="submit" value="Cadastrar Curso">
+  </form>
+  <div class="link-container">
+    <a href="{{ url_for('inside_home') }}">Voltar ao menu</a>
+</div>
+</body>
+</html>
