@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home Page</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+<h2 style="text-align:center">Seja bem-vindo à Home Page</h2>
+<h3 style="text-align:center">Cadastro de Alunos e Professores</h2>
+<hr>
+{{ nome }}<br>
+<ol>
+	{% for item in teste %}
+	<li>{{ item }}</li>
+	{% endfor %}
+</ol>
+<div class="link-container">
+	<a href="{{ url_for('login') }}">Login</a>
+</div>
+
+</body>
+</html>

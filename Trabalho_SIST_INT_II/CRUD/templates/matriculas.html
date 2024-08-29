@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matricular em Disciplinas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <h1>Matricular em Disciplinas</h1>
+
+    {% if disciplinas %}
+        <form method="POST" action="{{ url_for('matricular_disciplina') }}">
+            <label for="disciplina_id">Escolha uma Disciplina:</label>
+            <select name="disciplina_id" id="disciplina_id">
+                {% for disciplina in disciplinas %}
+                    <option value="{{ disciplina[0] }}">{{ disciplina[1] }} - Professor: {{ disciplina[2] }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <button type="submit">Matricular</button>
+        </form>
+    {% else %}
+        <p>Não há disciplinas cadastradas para matrícula.</p>
+    {% endif %}
+
+    <hr>
+    <h2>Disciplinas Matriculadas</h2>
+    {% if disciplinas_matriculadas %}
+        <ul>
+            {% for disciplina in disciplinas_matriculadas %}
+                <li>{{ disciplina[0] }} - Professor: {{ disciplina[1] }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Você ainda não está matriculado em nenhuma disciplina.</p>
+    {% endif %}
+    
+    <div class="link-container">
+	    <a href="{{ url_for('inside_home') }}">Voltar ao menu</a>
+    </div>
+
+</body>
+</html>
