@@ -1,6 +1,6 @@
 Projeto de Sistema de Gerenciamento Acadêmico com Flask e MySQL
 
-Este projeto é um sistema de gerenciamento acadêmico desenvolvido em Flask com integração ao banco de dados MySQL para cumprir com uma das avaliações da disciplinas de SISTEMA PARA INTERNET II. O sistema permite o cadastro de usuários, cursos, disciplinas e matrículas, além de gerenciar autenticação de usuários com diferentes níveis de acesso (alunos e professores).
+Este projeto é um sistema de gerenciamento acadêmico desenvolvido em Flask com integração ao banco de dados MySQL para cumprir com uma das avaliações da disciplinas de SISTEMAS PARA INTERNET II. O sistema permite o cadastro de usuários, cursos, disciplinas e matrículas, além de gerenciar autenticação de usuários com diferentes níveis de acesso (alunos e professores).
 
 Funcionalidades
 -Autenticação de Usuários: Login, logout e controle de acesso com diferentes permissões para alunos e professores.
